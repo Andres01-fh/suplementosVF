@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suplementos VF</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo Suplementos VF">
+      Suplementos VF
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#nosotros">Sobre nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="carrito-icono" id="abrir-carrito">
+      🛒 <span id="contador-carrito">0</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Suplementos y Ropa Deportiva</h1>
+    <a href="#productos" class="btn">Ver productos</a>
+  </section>
+
+  <section id="productos" class="productos">
+    <h2>Productos destacados</h2>
+    <div class="producto">
+      <img src="suplemento.jpg" alt="Suplemento">
+      <h3>Suplemento</h3>
+      <p>$500.00</p>
+      <button onclick="agregarAlCarrito('Suplemento', 500)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <img src="camiseta.jpg" alt="Camiseta deportiva">
+      <h3>Camiseta deportiva</h3>
+      <p>$350.00</p>
+      <button onclick="agregarAlCarrito('Camiseta deportiva', 350)">Agregar al carrito</button>
+    </div>
+  </section>
+
+  <section id="nosotros" class="nosotros">
+    <h2>Sobre nosotros</h2>
+    <p>Suplementos VF ofrece productos de alta calidad para atletas y entusiastas del fitness.</p>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <form id="form-contacto">
+      <input type="text" placeholder="Nombre" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <textarea placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Suplementos VF. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  
+  <!-- Modal para productos -->
+  <div id="modal-productos" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" id="cerrar-modal">&times;</span>
+      <h2>Productos destacados</h2>
+      <div id="productos-modal-lista">
+        <!-- Aquí se copiarán los productos -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para carrito -->
+  <div id="modal-carrito" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" id="cerrar-carrito">&times;</span>
+      <h2>Tu carrito</h2>
+      <div id="carrito-lista"></div>
+      <div id="carrito-total"></div>
+      <button id="pagar-btn" class="btn">Pago seguro electrónico</button>
+    </div>
+  </div>
+</body>
+</html>
