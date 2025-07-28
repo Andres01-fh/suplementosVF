@@ -1,58 +1,570 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Suplementos VF</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="Logo Suplementos VF">
-      Suplementos VF
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#nosotros">Sobre nosotros</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
     <div class="header-actions">
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="carrito-icono" id="abrir-carrito">
+      <nav>
+        <ul>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="carrito-icono" id="abrir-carrito" tabindex="0" aria-label="Ver carrito">
         🛒 <span id="contador-carrito">0</span>
       </div>
     </div>
   </header>
 
   <section class="hero">
-    <h1>Suplementos y Ropa Deportiva</h1>
+    <h1>Suplementación Deportiva</h1>
     <a href="#productos" class="btn">Ver productos</a>
   </section>
 
+  <!-- PRODUCTOS -->
   <section id="productos" class="productos">
     <h2>Productos destacados</h2>
-    <div class="producto">
-      <img src="suplemento.jpg" alt="Suplemento">
-      <h3>Suplemento</h3>
-      <p>$500.00</p>
-      <button onclick="agregarAlCarrito('Suplemento', 500)">Agregar al carrito</button>
+
+    <!-- Listado de categorías (menú desplegable) -->
+    <div id="categorias-listado" class="categorias-listado" style="display:none;">
+      <h3>Elige una categoría</h3>
+      <ul>
+        <li><a href="#proteinas" class="categoria-link">Proteínas</a></li>
+        <li><a href="#creatinas" class="categoria-link">Creatinas</a></li>
+        <li><a href="#aminoacidos" class="categoria-link">Aminoácidos</a></li>
+        <li><a href="#preentrenos" class="categoria-link">Preentrenos</a></li>
+        <li><a href="#vitaminas" class="categoria-link">Vitaminas y Salud</a></li>
+        <li><a href="#otros" class="categoria-link">Otros</a></li>
+      </ul>
     </div>
-    <div class="producto">
-      <img src="camiseta.jpg" alt="Camiseta deportiva">
-      <h3>Camiseta deportiva</h3>
-      <p>$350.00</p>
-      <button onclick="agregarAlCarrito('Camiseta deportiva', 350)">Agregar al carrito</button>
+<div class="categoria" id="proteinas">
+  <h3>Proteínas</h3>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="WHEY PURE 1LB 15 SERVICIOS VAINILLA">
+    <h3>WHEY PURE 1LB 15 SERVICIOS VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$72,000</p>
+    <button onclick="agregarAlCarrito('WHEY PURE 1LB 15 SERVICIOS VAINILLA', 72000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="WHEY PURE 2LB 30 SERVICIOS SABOR SURTIDO">
+    <h3>WHEY PURE 2LB 30 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$140,000</p>
+    <button onclick="agregarAlCarrito('WHEY PURE 2LB 30 SERVICIOS SABOR SURTIDO', 140000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="WHEY PURE 5LB 75 SERVICIOS SABOR SURTIDO">
+    <h3>WHEY PURE 5LB 75 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$284,000</p>
+    <button onclick="agregarAlCarrito('WHEY PURE 5LB 75 SERVICIOS SABOR SURTIDO', 284000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="MASS EVOLUTION 2LB 6 SERVICIOS SABOR VAINILLA">
+    <h3>MASS EVOLUTION 2LB 6 SERVICIOS SABOR VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.</p>
+    <p class="precio">$45,100</p>
+    <button onclick="agregarAlCarrito('MASS EVOLUTION 2LB 6 SERVICIOS SABOR VAINILLA', 45100, 'PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="MASS EVOLUTION 4LB 13 SERVICIOS SABOR VAINILLA">
+    <h3>MASS EVOLUTION 4LB 13 SERVICIOS SABOR VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.</p>
+    <p class="precio">$79,000</p>
+    <button onclick="agregarAlCarrito('MASS EVOLUTION 4LB 13 SERVICIOS SABOR VAINILLA', 79000, 'PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="MASS EVOLUTION 10LB 30 SERVICIOS SABOR VAINILLA">
+    <h3>MASS EVOLUTION 10LB 30 SERVICIOS SABOR VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.</p>
+    <p class="precio">$168,000</p>
+    <button onclick="agregarAlCarrito('MASS EVOLUTION 10LB 30 SERVICIOS SABOR VAINILLA', 168000, 'PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="TNT 10LB 14 SERVICIOS SABOR VAINILLA">
+    <h3>TNT 10LB 14 SERVICIOS SABOR VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.</p>
+    <p class="precio">$252,000</p>
+    <button onclick="agregarAlCarrito('TNT 10LB 14 SERVICIOS SABOR VAINILLA', 252000, 'PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="TNT 6LB 9 SERVICIOS SABOR VAINILLA">
+    <h3>TNT 6LB 9 SERVICIOS SABOR VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.</p>
+    <p class="precio">$160,000</p>
+    <button onclick="agregarAlCarrito('TNT 6LB 9 SERVICIOS SABOR VAINILLA', 160000, 'PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="TNT 3LB 5 SERVICIOS SABOR VAINILLA">
+    <h3>TNT 3LB 5 SERVICIOS SABOR VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.</p>
+    <p class="precio">$83,000</p>
+    <button onclick="agregarAlCarrito('TNT 3LB 5 SERVICIOS SABOR VAINILLA', 83000, 'PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="ISOFIT 2LB 28 SERVICIOS SABOR VAINILLA">
+    <h3>ISOFIT 2LB 28 SERVICIOS SABOR VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$175,000</p>
+    <button onclick="agregarAlCarrito('ISOFIT 2LB 28 SERVICIOS SABOR VAINILLA', 175000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="ISOWHEY 2LB 30 SERVICIOS SABOR SURTIDO">
+    <h3>ISOWHEY 2LB 30 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$170,000</p>
+    <button onclick="agregarAlCarrito('ISOWHEY 2LB 30 SERVICIOS SABOR SURTIDO', 170000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="THE WHEY OF IMN 3LB 16 SERVICIOS SABOR SURTIDO">
+    <h3>THE WHEY OF IMN 3LB 16 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.</p>
+    <p class="precio">$90,000</p>
+    <button onclick="agregarAlCarrito('THE WHEY OF IMN 3LB 16 SERVICIOS SABOR SURTIDO', 90000, 'PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="PROTON WHEY 4LB 60 SERVICIOS SABOR SURTIDO">
+    <h3>PROTON WHEY 4LB 60 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$297,600</p>
+    <button onclick="agregarAlCarrito('PROTON WHEY 4LB 60 SERVICIOS SABOR SURTIDO', 297600, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="PROTON WHEY 2LB 30 SERVICIOS SABOR SURTIDO">
+    <h3>PROTON WHEY 2LB 30 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$160,000</p>
+    <button onclick="agregarAlCarrito('PROTON WHEY 2LB 30 SERVICIOS SABOR SURTIDO', 160000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="PROTON GAINER 3LB 6 SERVICIOS VAINILLA">
+    <h3>PROTON GAINER 3LB 6 SERVICIOS VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.</p>
+    <p class="precio">$85,000</p>
+    <button onclick="agregarAlCarrito('PROTON GAINER 3LB 6 SERVICIOS VAINILLA', 85000, 'PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="PROTON GAINER 6LB 6 SERVICIOS VAINILLA">
+    <h3>PROTON GAINER 6LB 6 SERVICIOS VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.</p>
+    <p class="precio">$160,000</p>
+    <button onclick="agregarAlCarrito('PROTON GAINER 6LB 6 SERVICIOS VAINILLA', 160000, 'PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="SMART GAINER 13LB 24 SERVICIOS SABOR SURTIDO">
+    <h3>SMART GAINER 13LB 24 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.</p>
+    <p class="precio">$315,000</p>
+    <button onclick="agregarAlCarrito('SMART GAINER 13LB 24 SERVICIOS SABOR SURTIDO', 315000, 'PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="SMART GAINER 6LB 11 SERVICIOS SABOR SURTIDO">
+    <h3>SMART GAINER 6LB 11 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.</p>
+    <p class="precio">$160,000</p>
+    <button onclick="agregarAlCarrito('SMART GAINER 6LB 11 SERVICIOS SABOR SURTIDO', 160000, 'PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="SMART GAINER 3LB 6 SERVICIOS SABOR SURTIDO">
+    <h3>SMART GAINER 3LB 6 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.</p>
+    <p class="precio">$90,000</p>
+    <button onclick="agregarAlCarrito('SMART GAINER 3LB 6 SERVICIOS SABOR SURTIDO', 90000, 'PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="ISOBEST 2LB 28 SERVICIOS SABOR VAINILLA">
+    <h3>ISOBEST 2LB 28 SERVICIOS SABOR VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$240,000</p>
+    <button onclick="agregarAlCarrito('ISOBEST 2LB 28 SERVICIOS SABOR VAINILLA', 240000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="BEST PROTEIN 2LB 28 SERVICIOS SABOR SURTIDO">
+    <h3>BEST PROTEIN 2LB 28 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$199,000</p>
+    <button onclick="agregarAlCarrito('BEST PROTEIN 2LB 28 SERVICIOS SABOR SURTIDO', 199000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="BEST WHEY 2LB 28 SERVICIOS SABOR SURTIDO">
+    <h3>BEST WHEY 2LB 28 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$150,000</p>
+    <button onclick="agregarAlCarrito('BEST WHEY 2LB 28 SERVICIOS SABOR SURTIDO', 150000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="BEST PROTEIN 4LB 55 SERVICIOS SABOR SURTIDO">
+    <h3>BEST PROTEIN 4LB 55 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$370,000</p>
+    <button onclick="agregarAlCarrito('BEST PROTEIN 4LB 55 SERVICIOS SABOR SURTIDO', 370000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="BEST PROTEIN 1LB 14 SERVICIOS SABOR SURTIDO">
+    <h3>BEST PROTEIN 1LB 14 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$100,000</p>
+    <button onclick="agregarAlCarrito('BEST PROTEIN 1LB 14 SERVICIOS SABOR SURTIDO', 100000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="BEST VEGAN 2LB 28 SERVICIOS SABOR SURTIDO">
+    <h3>BEST VEGAN 2LB 28 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$130,000</p>
+    <button onclick="agregarAlCarrito('BEST VEGAN 2LB 28 SERVICIOS SABOR SURTIDO', 130000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="CAJA BIPRO CLASSIC 18 SOBRES VAINILLA">
+    <h3>CAJA BIPRO CLASSIC 18 SOBRES VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$85,000</p>
+    <button onclick="agregarAlCarrito('CAJA BIPRO CLASSIC 18 SOBRES VAINILLA', 85000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="BIPRO CLASSIC 1LB 16 SERVICIOS SABOR VAINILLA">
+    <h3>BIPRO CLASSIC 1LB 16 SERVICIOS SABOR VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$80,000</p>
+    <button onclick="agregarAlCarrito('BIPRO CLASSIC 1LB 16 SERVICIOS SABOR VAINILLA', 80000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="BIPRO CLASSIC 2LB 35 SERVICIOS SABOR SURTIDO">
+    <h3>BIPRO CLASSIC 2LB 35 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$165,000</p>
+    <button onclick="agregarAlCarrito('BIPRO CLASSIC 2LB 35 SERVICIOS SABOR SURTIDO', 165000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="BIPRO CLASSIC 3LB 52 SERVICIOS SABOR SURTIDO">
+    <h3>BIPRO CLASSIC 3LB 52 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$225,000</p>
+    <button onclick="agregarAlCarrito('BIPRO CLASSIC 3LB 52 SERVICIOS SABOR SURTIDO', 225000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="ISOCLEAN 2LB 36 SERVICIOS SABOR SURTIDO">
+    <h3>ISOCLEAN 2LB 36 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$175,000</p>
+    <button onclick="agregarAlCarrito('ISOCLEAN 2LB 36 SERVICIOS SABOR SURTIDO', 175000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="BIPRO LITE 2LB 20 SERVICIOS SABOR VAINILLA">
+    <h3>BIPRO LITE 2LB 20 SERVICIOS SABOR VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$165,000</p>
+    <button onclick="agregarAlCarrito('BIPRO LITE 2LB 20 SERVICIOS SABOR VAINILLA', 165000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="BIPRO RIPPED 2LB 20 SERVICIOS SABOR VAINILLA">
+    <h3>BIPRO RIPPED 2LB 20 SERVICIOS SABOR VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$165,000</p>
+    <button onclick="agregarAlCarrito('BIPRO RIPPED 2LB 20 SERVICIOS SABOR VAINILLA', 165000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="MEGAPLEX LITE 2LB 25 SERVICIOS SABOR VAINILLA">
+    <h3>MEGAPLEX LITE 2LB 25 SERVICIOS SABOR VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$155,000</p>
+    <button onclick="agregarAlCarrito('MEGAPLEX LITE 2LB 25 SERVICIOS SABOR VAINILLA', 155000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="BIPRO MASS 3LB 19 SERVICIOS SABOR VAINILLA">
+    <h3>BIPRO MASS 3LB 19 SERVICIOS SABOR VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.</p>
+    <p class="precio">$165,000</p>
+    <button onclick="agregarAlCarrito('BIPRO MASS 3LB 19 SERVICIOS SABOR VAINILLA', 165000, 'PROTEINA HIPERCALORICA GANADOR DE PESO. Ideal para aumentar masa muscular y peso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="BIPRO COMPLEX 2LB 17 SERVICIOS SABOR VAINILLA">
+    <h3>BIPRO COMPLEX 2LB 17 SERVICIOS SABOR VAINILLA</h3>
+    <p class="descripcion">PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.</p>
+    <p class="precio">$165,000</p>
+    <button onclick="agregarAlCarrito('BIPRO COMPLEX 2LB 17 SERVICIOS SABOR VAINILLA', 165000, 'PROTEINA HIPOCALORICA LIMPIA. Suplemento ideal para recuperación y desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+</div>
+<div class="categoria" id="creatinas">
+  <h3>Creatinas</h3>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="CREATINA ULTRA PURE 100 SERVICIOS SIN SABOR">
+    <h3>CREATINA ULTRA PURE 100 SERVICIOS SIN SABOR</h3>
+    <p class="descripcion">CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.</p>
+    <p class="precio">$130,000</p>
+    <button onclick="agregarAlCarrito('CREATINA ULTRA PURE 100 SERVICIOS SIN SABOR', 130000, 'CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="CREA4 SMART 92 SERVICIOS FRUTOS ROJOS">
+    <h3>CREA4 SMART 92 SERVICIOS FRUTOS ROJOS</h3>
+    <p class="descripcion">CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.</p>
+    <p class="precio">$77,000</p>
+    <button onclick="agregarAlCarrito('CREA4 SMART 92 SERVICIOS FRUTOS ROJOS', 77000, 'CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="CREATINA INSTICT 60 SERVICIOS SABOR UVA">
+    <h3>CREATINA INSTICT 60 SERVICIOS SABOR UVA</h3>
+    <p class="descripcion">CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.</p>
+    <p class="precio">$70,000</p>
+    <button onclick="agregarAlCarrito('CREATINA INSTICT 60 SERVICIOS SABOR UVA', 70000, 'CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="CREATINA INSTICT 30 SERVICIOS SABOR UVA">
+    <h3>CREATINA INSTICT 30 SERVICIOS SABOR UVA</h3>
+    <p class="descripcion">CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.</p>
+    <p class="precio">$41,000</p>
+    <button onclick="agregarAlCarrito('CREATINA INSTICT 30 SERVICIOS SABOR UVA', 41000, 'CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="TNT PARANOIA 24 SERVICIOS NARANJA">
+    <h3>TNT PARANOIA 24 SERVICIOS NARANJA</h3>
+    <p class="descripcion">PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.</p>
+    <p class="precio">$105,000</p>
+    <button onclick="agregarAlCarrito('TNT PARANOIA 24 SERVICIOS NARANJA', 105000, 'PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="CR2 60 SERVICIOS SABOR SURTIDO">
+    <h3>CR2 60 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">CREATINA HCL Y MONOHIDRATO. Mejora el rendimiento físico y la fuerza.</p>
+    <p class="precio">$99,000</p>
+    <button onclick="agregarAlCarrito('CR2 60 SERVICIOS SABOR SURTIDO', 99000, 'CREATINA HCL Y MONOHIDRATO. Mejora el rendimiento físico y la fuerza.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="CREATINA IMN 133 SERVICIOS SIN SABOR">
+    <h3>CREATINA IMN 133 SERVICIOS SIN SABOR</h3>
+    <p class="descripcion">CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.</p>
+    <p class="precio">$119,000</p>
+    <button onclick="agregarAlCarrito('CREATINA IMN 133 SERVICIOS SIN SABOR', 119000, 'CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="CREATINA IMN 50 SERVICIOS SIN SABOR">
+    <h3>CREATINA IMN 50 SERVICIOS SIN SABOR</h3>
+    <p class="descripcion">CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.</p>
+    <p class="precio">$49,000</p>
+    <button onclick="agregarAlCarrito('CREATINA IMN 50 SERVICIOS SIN SABOR', 49000, 'CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="ATOMIC HCL 60 SERVICIOS SABOR SURTIDO">
+    <h3>ATOMIC HCL 60 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">CREATINA HCL. Mejora el rendimiento físico y la fuerza.</p>
+    <p class="precio">$90,000</p>
+    <button onclick="agregarAlCarrito('ATOMIC HCL 60 SERVICIOS SABOR SURTIDO', 90000, 'CREATINA HCL. Mejora el rendimiento físico y la fuerza.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="ATOMIC MONOHIDRATO 120 SERVICIOS SIN SABOR">
+    <h3>ATOMIC MONOHIDRATO 120 SERVICIOS SIN SABOR</h3>
+    <p class="descripcion">CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.</p>
+    <p class="precio">$115,000</p>
+    <button onclick="agregarAlCarrito('ATOMIC MONOHIDRATO 120 SERVICIOS SIN SABOR', 115000, 'CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="LEGEND 30 SERVICIOS SABOR SURTIDO">
+    <h3>LEGEND 30 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.</p>
+    <p class="precio">$80,000</p>
+    <button onclick="agregarAlCarrito('LEGEND 30 SERVICIOS SABOR SURTIDO', 80000, 'CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="CREATINA TIME 100 SERVICIOS SIN SABOR">
+    <h3>CREATINA TIME 100 SERVICIOS SIN SABOR</h3>
+    <p class="descripcion">CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.</p>
+    <p class="precio">$98,000</p>
+    <button onclick="agregarAlCarrito('CREATINA TIME 100 SERVICIOS SIN SABOR', 98000, 'CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="CREATINA 3.000 100 SERVICIOS SIN SABOR">
+    <h3>CREATINA 3.000 100 SERVICIOS SIN SABOR</h3>
+    <p class="descripcion">CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.</p>
+    <p class="precio">$125,000</p>
+    <button onclick="agregarAlCarrito('CREATINA 3.000 100 SERVICIOS SIN SABOR', 125000, 'CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="CREATINA 3.000 50 SERVICIOS SIN SABOR">
+    <h3>CREATINA 3.000 50 SERVICIOS SIN SABOR</h3>
+    <p class="descripcion">CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.</p>
+    <p class="precio">$70,000</p>
+    <button onclick="agregarAlCarrito('CREATINA 3.000 50 SERVICIOS SIN SABOR', 70000, 'CREATINA MONOHIDRATADA. Mejora el rendimiento físico y la fuerza.')">Agregar al carrito</button>
+  </div>
+</div>
+<div class="categoria" id="aminoacidos">
+  <h3>Aminoácidos</h3>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="ARMY 30 SERVICIOS SABOR SURTIDO">
+    <h3>ARMY 30 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">AMINOÁCIDOS. Apoya la recuperación y el desarrollo muscular.</p>
+    <p class="precio">$115,000</p>
+    <button onclick="agregarAlCarrito('ARMY 30 SERVICIOS SABOR SURTIDO', 115000, 'AMINOÁCIDOS. Apoya la recuperación y el desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="BCAAS 30 SERVICIOS PASTILLAS">
+    <h3>BCAAS 30 SERVICIOS PASTILLAS</h3>
+    <p class="descripcion">AMINOÁCIDOS. Apoya la recuperación y el desarrollo muscular.</p>
+    <p class="precio">$77,000</p>
+    <button onclick="agregarAlCarrito('BCAAS 30 SERVICIOS PASTILLAS', 77000, 'AMINOÁCIDOS. Apoya la recuperación y el desarrollo muscular.')">Agregar al carrito</button>
+  </div>
+</div>
+<div class="categoria" id="preentrenos">
+  <h3>Preentrenos</h3>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="ULTIMATE 30 SERVICIOS SABOR SURTIDO">
+    <h3>ULTIMATE 30 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.</p>
+    <p class="precio">$120,000</p>
+    <button onclick="agregarAlCarrito('ULTIMATE 30 SERVICIOS SABOR SURTIDO', 120000, 'PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="ELECTRON 30 SERVICIOS SABOR SURTIDO">
+    <h3>ELECTRON 30 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.</p>
+    <p class="precio">$125,000</p>
+    <button onclick="agregarAlCarrito('ELECTRON 30 SERVICIOS SABOR SURTIDO', 125000, 'PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="INTENZE 30 SERVICIOS SABOR SURTIDO">
+    <h3>INTENZE 30 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.</p>
+    <p class="precio">$145,000</p>
+    <button onclick="agregarAlCarrito('INTENZE 30 SERVICIOS SABOR SURTIDO', 145000, 'PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="INTENZE 14 SERVICIOS SABOR SURTIDO">
+    <h3>INTENZE 14 SERVICIOS SABOR SURTIDO</h3>
+    <p class="descripcion">PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.</p>
+    <p class="precio">$75,000</p>
+    <button onclick="agregarAlCarrito('INTENZE 14 SERVICIOS SABOR SURTIDO', 75000, 'PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="INTENZE READY LATA">
+    <h3>INTENZE READY LATA</h3>
+    <p class="descripcion">PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.</p>
+    <p class="precio">$10,000</p>
+    <button onclick="agregarAlCarrito('INTENZE READY LATA', 10000, 'PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="INTENZE VITALY LATA">
+    <h3>INTENZE VITALY LATA</h3>
+    <p class="descripcion">PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.</p>
+    <p class="precio">$10,000</p>
+    <button onclick="agregarAlCarrito('INTENZE VITALY LATA', 10000, 'PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="INTENZE SACHET 12 SOBRE FRUTOS ROJOS">
+    <h3>INTENZE SACHET 12 SOBRE FRUTOS ROJOS</h3>
+    <p class="descripcion">PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.</p>
+    <p class="precio">$68,400</p>
+    <button onclick="agregarAlCarrito('INTENZE SACHET 12 SOBRE FRUTOS ROJOS', 68400, 'PREENTRENO. Aumenta la energía y el enfoque durante el entrenamiento.')">Agregar al carrito</button>
+  </div>
+</div>
+<div class="categoria" id="vitaminas">
+  <h3>Vitaminas y Salud</h3>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="OMEGA 3 1.200 MG 20 SERVICIOS CAPSULAS">
+    <h3>OMEGA 3 1.200 MG 20 SERVICIOS CAPSULAS</h3>
+    <p class="descripcion">OMEGA 3. Ácidos grasos esenciales para la salud cardiovascular y cerebral.</p>
+    <p class="precio">$47,000</p>
+    <button onclick="agregarAlCarrito('OMEGA 3 1.200 MG 20 SERVICIOS CAPSULAS', 47000, 'OMEGA 3. Ácidos grasos esenciales para la salud cardiovascular y cerebral.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="VITAMINA C 1000 MG CON ZINC 100 SERVICIOS CAPSULAS">
+    <h3>VITAMINA C 1000 MG CON ZINC 100 SERVICIOS CAPSULAS</h3>
+    <p class="descripcion">VITAMINA C. Refuerza el sistema inmunológico y antioxidante.</p>
+    <p class="precio">$63,000</p>
+    <button onclick="agregarAlCarrito('VITAMINA C 1000 MG CON ZINC 100 SERVICIOS CAPSULAS', 63000, 'VITAMINA C. Refuerza el sistema inmunológico y antioxidante.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="SUPER MAGNESIO 50 SERVICIOS CAPSULAS">
+    <h3>SUPER MAGNESIO 50 SERVICIOS CAPSULAS</h3>
+    <p class="descripcion">MAGNESIO ASPARTATO, LACTATO Y CITRATO. Apoya la función muscular y nerviosa.</p>
+    <p class="precio">$77,000</p>
+    <button onclick="agregarAlCarrito('SUPER MAGNESIO 50 SERVICIOS CAPSULAS', 77000, 'MAGNESIO ASPARTATO, LACTATO Y CITRATO. Apoya la función muscular y nerviosa.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="ENZYMAX 60 SERVICIOS CAPSULAS">
+    <h3>ENZYMAX 60 SERVICIOS CAPSULAS</h3>
+    <p class="descripcion">ENZIMAS DIGESTIVAS. Mejora la digestión y absorción de nutrientes.</p>
+    <p class="precio">$83,000</p>
+    <button onclick="agregarAlCarrito('ENZYMAX 60 SERVICIOS CAPSULAS', 83000, 'ENZIMAS DIGESTIVAS. Mejora la digestión y absorción de nutrientes.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="MELATONINA 3MG 120 SERVICIOS CAPSULAS">
+    <h3>MELATONINA 3MG 120 SERVICIOS CAPSULAS</h3>
+    <p class="descripcion">MELATONINA. Ayuda a regular el sueño y el descanso.</p>
+    <p class="precio">$50,000</p>
+    <button onclick="agregarAlCarrito('MELATONINA 3MG 120 SERVICIOS CAPSULAS', 50000, 'MELATONINA. Ayuda a regular el sueño y el descanso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="VITAMINA D3+K2 100 SERVICIOS CAPSULAS">
+    <h3>VITAMINA D3+K2 100 SERVICIOS CAPSULAS</h3>
+    <p class="descripcion">VITAMINA D3. Apoya la salud ósea y el sistema inmunológico.</p>
+    <p class="precio">$78,000</p>
+    <button onclick="agregarAlCarrito('VITAMINA D3+K2 100 SERVICIOS CAPSULAS', 78000, 'VITAMINA D3. Apoya la salud ósea y el sistema inmunológico.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="VITAMINA E 1000 UI 50 SERVICIOS CAPSULAS">
+    <h3>VITAMINA E 1000 UI 50 SERVICIOS CAPSULAS</h3>
+    <p class="descripcion">VITAMINA E. Antioxidante que protege las células del daño.</p>
+    <p class="precio">$72,000</p>
+    <button onclick="agregarAlCarrito('VITAMINA E 1000 UI 50 SERVICIOS CAPSULAS', 72000, 'VITAMINA E. Antioxidante que protege las células del daño.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="CALCIUM PLUS 60 SERVICIOS CAPSULAS">
+    <h3>CALCIUM PLUS 60 SERVICIOS CAPSULAS</h3>
+    <p class="descripcion">CALCIO VITAMINA D3. Apoya la salud ósea y dental.</p>
+    <p class="precio">$42,000</p>
+    <button onclick="agregarAlCarrito('CALCIUM PLUS 60 SERVICIOS CAPSULAS', 42000, 'CALCIO VITAMINA D3. Apoya la salud ósea y dental.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="B-COMPLEX WITH B-12 90 SERVICIOS PASTILLAS">
+    <h3>B-COMPLEX WITH B-12 90 SERVICIOS PASTILLAS</h3>
+    <p class="descripcion">VITAMINA B12. Apoya el metabolismo energético y el sistema nervioso.</p>
+    <p class="precio">$45,000</p>
+    <button onclick="agregarAlCarrito('B-COMPLEX WITH B-12 90 SERVICIOS PASTILLAS', 45000, 'VITAMINA B12. Apoya el metabolismo energético y el sistema nervioso.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="COLLAGEN + BIOTINA 50 SERVICIOS CAPSULAS">
+    <h3>COLLAGEN + BIOTINA 50 SERVICIOS CAPSULAS</h3>
+    <p class="descripcion">COLAGENO BIOTINA. Favorece la salud de la piel, cabello y uñas.</p>
+    <p class="precio">$73,000</p>
+    <button onclick="agregarAlCarrito('COLLAGEN + BIOTINA 50 SERVICIOS CAPSULAS', 73000, 'COLAGENO BIOTINA. Favorece la salud de la piel, cabello y uñas.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="COLLAGEN PEPTIDOS 60 SERVICIOS CAPSULAS">
+    <h3>COLLAGEN PEPTIDOS 60 SERVICIOS CAPSULAS</h3>
+    <p class="descripcion">COLAGENO. Favorece la salud de la piel, articulaciones y huesos.</p>
+    <p class="precio">$77,000</p>
+    <button onclick="agregarAlCarrito('COLLAGEN PEPTIDOS 60 SERVICIOS CAPSULAS', 77000, 'COLAGENO. Favorece la salud de la piel, articulaciones y huesos.')">Agregar al carrito</button>
+  </div>
+</div>
+<div class="categoria" id="otros">
+  <h3>Otros</h3>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="GLUTAMINA FAST 60 SERVICIOS SIN SABOR">
+    <h3>GLUTAMINA FAST 60 SERVICIOS SIN SABOR</h3>
+    <p class="descripcion">GLUTAMINA. Favorece la recuperación muscular y el sistema inmunológico.</p>
+    <p class="precio">$77,000</p>
+    <button onclick="agregarAlCarrito('GLUTAMINA FAST 60 SERVICIOS SIN SABOR', 77000, 'GLUTAMINA. Favorece la recuperación muscular y el sistema inmunológico.')">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="ruta-a-tu-imagen.jpg" alt="ENZYMAX 60 SERVICIOS CAPSULAS">
+    <h3>ENZYMAX 60 SERVICIOS CAPSULAS</h3>
+    <p class="descripcion">ENZIMAS DIGESTIVAS. Mejora la digestión y absorción de nutrientes.</p>
+    <p class="precio">$83,000</p>
+    <button onclick="agregarAlCarrito('ENZYMAX 60 SERVICIOS CAPSULAS', 83000, 'ENZIMAS DIGESTIVAS. Mejora la digestión y absorción de nutrientes.')">Agregar al carrito</button>
+  </div>
+</div>
+    <!-- Aquí debes pegar los bloques de productos por categoría que te enviaré -->
+    <!-- Ejemplo de bloque de categoría:
+    <div class="categoria" id="proteinas">
+      <h3>Proteínas</h3>
+      <!-- productos de proteína aquí -->
     </div>
+    -->
+
   </section>
 
   <section id="nosotros" class="nosotros">
@@ -63,10 +575,10 @@
   <section id="contacto" class="contacto">
     <h2>Contacto</h2>
     <form id="form-contacto">
-      <input type="text" placeholder="Nombre" required />
-      <input type="email" placeholder="Correo electrónico" required />
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo electrónico" required>
       <textarea placeholder="Mensaje" required></textarea>
-      <button type="submit">Enviar</button>
+      <button type="submit">Enviar por WhatsApp</button>
     </form>
   </section>
 
@@ -74,27 +586,25 @@
     <p>&copy; 2025 Suplementos VF. Todos los derechos reservados.</p>
   </footer>
 
-  <script src="script.js"></script>
-  
-  <!-- Modal para productos -->
+  <!-- Modales (Carrito y Productos) -->
+  <div id="modal-carrito" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" id="cerrar-carrito">&times;</span>
+      <h2>Carrito de compras</h2>
+      <div id="carrito-lista"></div>
+      <div id="carrito-total"></div>
+      <button id="pagar-btn" class="btn">Pago seguro</button>
+      <button id="pse-btn" class="btn btn-pse">PSE</button>
+    </div>
+  </div>
   <div id="modal-productos" class="modal">
     <div class="modal-contenido">
       <span class="cerrar" id="cerrar-modal">&times;</span>
-      <h2>Productos destacados</h2>
+      <h2>Todos los productos</h2>
       <div id="productos-modal-lista"></div>
     </div>
   </div>
 
-  <!-- Modal para carrito -->
-  <div id="modal-carrito" class="modal">
-    <div class="modal-contenido">
-      <span class="cerrar" id="cerrar-carrito">&times;</span>
-      <h2>Tu carrito</h2>
-      <div id="carrito-lista"></div>
-      <div id="carrito-total"></div>
-      <button id="pagar-btn" class="btn">Pago seguro electrónico</button>
-      <button id="pse-btn" class="btn btn-pse">Pagar con PSE (Bancolombia)</button>
-    </div>
-  </div>
+  <script src="script.js"></script>
 </body>
 </html>
