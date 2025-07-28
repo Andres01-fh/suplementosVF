@@ -26,6 +26,24 @@ header {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+/* CORRECCIÓN: Logo y nombre alineados */
+.logo-nombre {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-nombre img {
+  width: 48px;
+  height: auto;
+}
+.nombre-sitio {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Elimina el antiguo .logo si no lo usas más */
+/*
 .logo {
   display: flex;
   align-items: center;
@@ -37,6 +55,7 @@ header {
   width: 48px;
   height: auto;
 }
+*/
 
 .header-actions {
   display: flex;
@@ -85,11 +104,12 @@ header {
   right: -15px;
 }
 
+/* CORRECCIÓN: Menú siempre visible en escritorio */
 header nav {
   transition: max-height 0.3s, opacity 0.3s;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
+  overflow: visible;
+  max-height: none;
+  opacity: 1;
 }
 header nav ul {
   display: flex;
@@ -149,12 +169,18 @@ header nav.abierto {
 }
 
 .productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
   text-align: center;
   padding: 2rem 0;
 }
 
 .producto {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 220px;
   margin: 1rem;
   border-radius: 12px;
@@ -304,6 +330,18 @@ footer {
   .menu-toggle {
     display: flex;
   }
+  /* CORRECCIÓN: Menú hamburguesa solo en móvil */
+  header nav {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, opacity 0.3s;
+  }
+  header nav.abierto {
+    max-height: 500px;
+    opacity: 1;
+    overflow: visible;
+  }
   header nav ul {
     flex-direction: column;
     gap: 1rem;
@@ -330,50 +368,6 @@ footer {
   .hero {
     padding: 2rem 1rem;
   }
-}
-.productos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem 0;
-}
-
-.producto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 220px;
-  margin: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  padding: 1rem;
-  background: #fff;
-  transition: transform 0.2s, box-shadow 0.2s;
-  vertical-align: top;
-}
-.producto:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-}
-.producto img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
-}
-.producto button {
-  background: #ff9800;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.2s;
-}
-.producto button:hover {
-  background: #e65100;
 }
 .categorias-listado {
   background: #fffbe7;
