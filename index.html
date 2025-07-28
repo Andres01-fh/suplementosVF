@@ -14,11 +14,6 @@
       <img src="logo.png" alt="Logo Suplementos VF">
       Suplementos VF
     </div>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
     <nav>
       <ul>
         <li><a href="#">Inicio</a></li>
@@ -27,8 +22,15 @@
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
-    <div class="carrito-icono" id="abrir-carrito">
-      🛒 <span id="contador-carrito">0</span>
+    <div class="header-actions">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="carrito-icono" id="abrir-carrito">
+        🛒 <span id="contador-carrito">0</span>
+      </div>
     </div>
   </header>
 
@@ -79,9 +81,7 @@
     <div class="modal-contenido">
       <span class="cerrar" id="cerrar-modal">&times;</span>
       <h2>Productos destacados</h2>
-      <div id="productos-modal-lista">
-        <!-- Aquí se copiarán los productos -->
-      </div>
+      <div id="productos-modal-lista"></div>
     </div>
   </div>
 
@@ -93,6 +93,7 @@
       <div id="carrito-lista"></div>
       <div id="carrito-total"></div>
       <button id="pagar-btn" class="btn">Pago seguro electrónico</button>
+      <button id="pse-btn" class="btn btn-pse">Pagar con PSE (Bancolombia)</button>
     </div>
   </div>
 </body>

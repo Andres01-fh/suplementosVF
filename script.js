@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const abrirCarrito = document.getElementById('abrir-carrito');
   const cerrarCarrito = document.getElementById('cerrar-carrito');
   const pagarBtn = document.getElementById('pagar-btn');
+  const pseBtn = document.getElementById('pse-btn');
 
   if (abrirCarrito) {
     abrirCarrito.onclick = function() {
@@ -95,6 +96,19 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       alert('Aquí iría la integración con el pago seguro electrónico.');
       // Aquí puedes integrar MercadoPago, PayU, Stripe, etc.
+    };
+  }
+
+  // Botón de pago PSE (simulado)
+  if (pseBtn) {
+    pseBtn.onclick = function() {
+      if (carrito.length === 0) {
+        alert('El carrito está vacío.');
+        return;
+      }
+      // Aquí debes hacer una petición a tu backend real para iniciar el pago PSE
+      // Por ahora, solo simula la redirección
+      window.open('https://www.bancolombia.com/personas/soluciones-para-tu-negocio/pagos/pse', '_blank');
     };
   }
 
