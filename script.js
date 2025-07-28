@@ -112,5 +112,18 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   }
 
+  // Menú hamburguesa
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.querySelector('header nav');
+  if (menuToggle && nav) {
+    menuToggle.onclick = function() {
+      nav.classList.toggle('abierto');
+    };
+    // Cierra el menú al hacer clic en un enlace
+    nav.querySelectorAll('a').forEach(link => {
+      link.onclick = () => nav.classList.remove('abierto');
+    });
+  }
+
   actualizarCarrito();
 });
